@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>webdesign.piskunov — редизайн сайтов для малого бизнеса</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#000; --paper:#fff; --off:#f7f7f5; --hair:#e6e6e6; --dim-w:400;
+    --lime:#dceeb1; --lilac:#c5b0f4; --mint:#c8e6cd; --coral:#f3c9b6; --navy:#1f1d3d;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper); color:var(--ink); font-family:'Sora',sans-serif; font-weight:400; line-height:1.45; font-size:18px;}
+  .wrap{max-width:1240px; margin:0 auto; padding:0 32px;}
+  .eyebrow{font-family:'Space Mono',monospace; text-transform:uppercase; letter-spacing:0.06em; font-size:13px;}
+  a{color:inherit;}
+
+  header{background:var(--paper); height:56px; display:flex; align-items:center;}
+  header .wrap{display:flex; justify-content:space-between; align-items:center; gap:40px;}
+  .logo{font-weight:700; font-size:18px; white-space:nowrap;}
+  nav{display:flex; align-items:center; gap:26px;}
+  nav a{font-size:15px; text-decoration:none;}
+  .pill{background:var(--ink); color:var(--paper); padding:10px 20px; border-radius:50px; text-decoration:none; font-weight:500; font-size:15px; display:inline-block;}
+  .pill.white{background:var(--paper); color:var(--ink); border:1px solid var(--hair);}
+
+  /* hero */
+  .hero{padding:64px 0 48px;}
+  .hero .eyebrow{margin-bottom:20px; display:block;}
+  .hero h1{font-size:clamp(38px,7vw,86px); font-weight:340; line-height:1.0; letter-spacing:-0.02em; max-width:900px;}
+  .hero p.lead{font-size:20px; font-weight:330; letter-spacing:-0.01em; max-width:520px; margin-top:26px;}
+  .hero-cta{margin-top:34px; display:flex; gap:14px; flex-wrap:wrap;}
+
+  /* color block sections */
+  .block{border-radius:24px; padding:48px; margin:0 0 48px;}
+  .block-lime{background:var(--lime);}
+  .block-lilac{background:var(--lilac);}
+  .block-mint{background:var(--mint);}
+  .block-navy{background:var(--navy); color:#fff;}
+  .block-coral{background:var(--coral);}
+  .block h2{font-size:clamp(26px,3.6vw,40px); font-weight:540; letter-spacing:-0.02em; max-width:640px;}
+  .block p{font-size:18px; font-weight:330; max-width:560px; margin-top:16px;}
+
+  /* niche block content */
+  .niche-tags{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px;}
+  .niche-tags span{background:rgba(0,0,0,0.08); padding:9px 16px; border-radius:50px; font-size:15px; font-weight:500;}
+  .block-navy .niche-tags span{background:rgba(255,255,255,0.12);}
+
+  /* process definition */
+  .process-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; margin-top:32px;}
+  .process-card{background:var(--paper); border-radius:8px; padding:24px;}
+  .process-card .eyebrow{opacity:0.6; margin-bottom:10px; display:block;}
+  .process-card h4{font-size:20px; font-weight:540; margin-bottom:6px;}
+  .process-card p{font-size:16px; font-weight:330; opacity:0.85;}
+
+  /* cases */
+  .cases-section{padding:0 0 48px;}
+  .cases-head{margin-bottom:40px;}
+  .cases-head h2{font-size:clamp(28px,4vw,44px); font-weight:340; letter-spacing:-0.02em;}
+  .case-list{display:flex; flex-direction:column; gap:20px;}
+  .case-item{border:1px solid var(--hair); border-radius:24px; padding:40px; display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:center; text-decoration:none; transition:border-color 0.15s ease;}
+  .case-item:hover{border-color:var(--ink);}
+  .case-swatch{font-weight:600;}
+  .case-item .eyebrow{opacity:0.5; margin-bottom:12px; display:block;}
+  .case-item h3{font-size:26px; font-weight:540; margin-bottom:12px;}
+  .case-item p{font-size:16px; font-weight:330; opacity:0.8;}
+  .case-swatch{height:180px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-family:'Space Mono',monospace; font-size:13px; text-align:center; padding:20px;}
+  @media (max-width:760px){ .case-item{grid-template-columns:1fr;} }
+
+  /* comparison table */
+  .compare-head{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:32px 0 4px;}
+  .compare-head .eyebrow{opacity:0.6;}
+  .compare-row{display:grid; grid-template-columns:1fr 1fr; gap:20px; padding:18px 0; border-top:1px solid rgba(0,0,0,0.1);}
+  .compare-row:last-child{border-bottom:1px solid rgba(0,0,0,0.1);}
+  .compare-row .good{font-weight:600; font-size:16px;}
+  .compare-row .bad{font-weight:330; font-size:16px; opacity:0.65;}
+
+  /* testimonials */
+  .testi-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; margin-top:32px;}
+  .testi-card{background:var(--paper); border-radius:8px; padding:28px;}
+  .testi-card p{font-size:16px; font-weight:330; line-height:1.55; opacity:0.9; margin:0;}
+  .testi-card .testi-name{display:block; margin-top:18px; font-weight:600; font-size:15px;}
+
+  /* pricing */
+  .pricing-section{padding:0 0 48px;}
+  .price-block{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:32px;}
+  .price-amount{font-size:clamp(48px,7vw,80px); font-weight:340; letter-spacing:-0.02em;}
+  .price-amount .cur{font-size:32px; vertical-align:top;}
+  .price-list{display:flex; flex-direction:column; gap:10px;}
+  .price-item{background:var(--paper); border-radius:8px; padding:14px 18px; font-size:16px; font-weight:400;}
+  .price-item strong{display:block; font-family:'Space Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700; margin-bottom:4px;}
+
+  /* faq */
+  .faq-section{padding:0 0 48px;}
+  .faq-head{margin-bottom:32px;}
+  .faq-head h2{font-size:clamp(28px,4vw,44px); font-weight:340; letter-spacing:-0.02em;}
+  .faq-head p{font-size:18px; font-weight:330; opacity:0.7; margin-top:12px; max-width:540px;}
+  .faq-list{display:flex; flex-direction:column; gap:12px;}
+  .faq-item{border:1px solid var(--hair); border-radius:16px; padding:22px 28px;}
+  .faq-item summary{cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:20px; font-size:18px; font-weight:540;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-toggle{font-family:'Space Mono',monospace; font-size:20px; flex-shrink:0; transition:transform 0.2s ease;}
+  .faq-item[open] .faq-toggle{transform:rotate(45deg);}
+  .faq-item p{margin-top:16px; font-size:16px; font-weight:330; opacity:0.8; line-height:1.6;}
+
+  /* contact */
+  .contact-block{text-align:center;}
+  .contact-block h2{color:#fff; font-size:clamp(30px,5.5vw,54px); font-weight:340; letter-spacing:-0.02em; max-width:680px; margin:0 auto 20px;}
+  .contact-block p{opacity:0.75; max-width:440px; margin:0 auto 32px;}
+  .contact-note{font-size:12px; opacity:0.5; margin-top:22px; font-family:'Space Mono',monospace;}
+
+  footer{padding:32px 0; border-top:1px solid var(--hair);}
+  footer .wrap{display:flex; justify-content:space-between; font-size:14px; opacity:0.6;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">webdesign.piskunov</div>
+    <nav>
+      <a href="#process">Процесс</a>
+      <a href="#cases">Работы</a>
+      <a href="#testimonials">Отзывы</a>
+      <a href="#contact" class="pill">Написать</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Редизайн · Разработка</span>
+    <h1>Не просто сайт.<br>Решение задачи бизнеса.</h1>
+    <p class="lead">Один исполнитель, один человек. Вы говорите напрямую с тем, кто делает сайт.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="pill">Обсудить проект →</a>
+      <a href="#cases" class="pill white">Смотреть работы →</a>
+    </div>
+  </div>
+</section>
+
+<section id="niche">
+  <div class="wrap">
+    <div class="block block-lime">
+      <span class="eyebrow">ДЛЯ КОГО</span>
+      <h2 style="max-width:none; white-space:nowrap;">Работаю с малым и средним бизнесом</h2>
+      <div class="niche-tags">
+        <span>🛍️ Продажи</span>
+        <span>🧰 Услуги</span>
+        <span>📣 Реклама</span>
+        <span>🎓 Образование</span>
+        <span>💆 Здоровье и красота</span>
+        <span>🍽️ Общепит</span>
+        <span>🧭 Туризм</span>
+        <span>🎡 Развлечения</span>
+        <span>🏠 Недвижимость</span>
+        <span>🏋️ Спорт</span>
+        <span>🏗️ Строительство</span>
+        <span>💻 IT</span>
+        <span>💰 Финансы</span>
+        <span>🚚 Логистика</span>
+        <span>👗 Мода</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="wrap">
+    <div class="block block-coral">
+      <span class="eyebrow">ВАШ ВЫБОР</span>
+      <h2 style="max-width:none;">Один специалист. Одна ответственность.</h2>
+      <p>От первого разговора до запуска и поддержки — без менеджеров, передач другому сотруднику и повторных объяснений.</p>
+
+      <div class="compare-head">
+        <span class="eyebrow">Со мной</span>
+        <span class="eyebrow">В студии</span>
+      </div>
+      <div class="compare-row">
+        <div class="good">Кто с вами говорил — тот и делает</div>
+        <div class="bad">Продаёт один, делает другой, правит третий</div>
+      </div>
+      <div class="compare-row">
+        <div class="good">Платите за сайт</div>
+        <div class="bad">Платите за сайт, офис и отдел продаж</div>
+      </div>
+      <div class="compare-row">
+        <div class="good">Не повторяете задачу разным людям</div>
+        <div class="bad">Каждый новый участник просит объяснить всё заново</div>
+      </div>
+      <div class="compare-row">
+        <div class="good">Получаете ответ без цепочки согласований</div>
+        <div class="bad">Менеджер уточняет у дизайнера, тот — у разработчика</div>
+      </div>
+      <div class="compare-row">
+        <div class="good">Правки не теряют общий замысел</div>
+        <div class="bad">Каждый специалист видит только свой участок</div>
+      </div>
+      <div class="compare-row">
+        <div class="good">После запуска знаете, кому написать</div>
+        <div class="bad">Проект сдан — вас передают в службу поддержки</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="block block-lilac">
+      <span class="eyebrow">КАК РАБОТАЕМ</span>
+      <h2>Всего четыре шага</h2>
+      <div class="process-grid">
+        <div class="process-card">
+          <span class="eyebrow">01</span>
+          <h4>Знакомство</h4>
+          <p>Смотрю сайт, честно рассказываю, что вижу — бесплатно, без обязательств.</p>
+        </div>
+        <div class="process-card">
+          <span class="eyebrow">02</span>
+          <h4>Макет</h4>
+          <p>Рабочая версия главной страницы — не картинка, а живой сайт.</p>
+        </div>
+        <div class="process-card">
+          <span class="eyebrow">03</span>
+          <h4>Правки</h4>
+          <p>Смотрите, комментируете — дорабатываю без спешки.</p>
+        </div>
+        <div class="process-card">
+          <span class="eyebrow">04</span>
+          <h4>Запуск</h4>
+          <p>Публикация, проверка на устройствах, я на связи первые недели.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cases" class="cases-section">
+  <div class="wrap">
+    <div class="cases-head">
+      <h2>Примеры проектов</h2>
+    </div>
+    <div class="case-list">
+      <a class="case-item" href="cases/ivanhoe.html" target="_blank">
+        <div>
+          <span class="eyebrow">WHALE WATCHING · ХЕРМАУС</span>
+          <h3>Оператор наблюдения за китами</h3>
+          <p>Оригинал — тяжёлые несжатые фото, видео-фон на JS-слайдере, мобильная версия почти не открывалась. Собрал два альтернативных макета с акцентом на быструю мобильную загрузку и понятный путь к брони.</p>
+        </div>
+        <div class="case-swatch block-navy">Смотреть кейс →</div>
+      </a>
+      <a class="case-item" href="cases/scuba.html" target="_blank">
+        <div>
+          <span class="eyebrow">ДАЙВИНГ-ЦЕНТР</span>
+          <h3>Дайвинг-школа и магазин снаряжения</h3>
+          <p>Сайт визуально не менялся годами — устаревшие шрифты, случайная сетка фото. Сделал три разных стиля на выбор: с картой, актуальными Google-отзывами и современной типографикой.</p>
+        </div>
+        <div class="case-swatch block-coral">Смотреть кейс →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <div class="block block-lime">
+      <span class="eyebrow">ОТЗЫВЫ</span>
+      <h2 style="max-width:none; white-space:nowrap;">Что говорят те, с кем уже работал</h2>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <p>«Никита — прекрасный специалист, который с полуслова понимает задачу от человека с бытовым уровнем понимания того, как устроен сайт. Работа выполнена оперативно и без нареканий: чётко, что обещал, то и сделал. Кроме того, он доступно объяснил все риски и дал прогнозы. Очень рекомендую! Мне кажется, таких специалистов сейчас мало. Однозначно будем обращаться регулярно».</p>
+        </div>
+        <div class="testi-card">
+          <p>«Сайт был отреставрирован очень качественно, с соблюдением всех параметров, которые мы с командой задали Никите. Сделал скидку на следующий заказ создания сайта — обратимся ещё».</p>
+        </div>
+        <div class="testi-card">
+          <p>«Спасибо, Никита, за проделанную работу! Очень удобный и красивый интерфейс. Также отдельное спасибо за доходчивое объяснение, как всей этой красотой в дальнейшем пользоваться. Дальнейшее сотрудничество по рекламе — только с вами».</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="pricing-section">
+  <div class="wrap">
+    <div class="block block-mint">
+      <span class="eyebrow">ЦЕНА</span>
+      <h2>Сколько это стоит.</h2>
+      <p>Цена — следствие задачи, а не наоборот. Сначала разбираюсь, потом называю сумму.</p>
+      <div class="process-grid">
+        <div class="process-card">
+          <span class="eyebrow">Вводные</span>
+          <h4>Рассказываете задачу</h4>
+          <p>Что нужно сделать и какой результат хотите получить.</p>
+        </div>
+        <div class="process-card">
+          <span class="eyebrow">Бесплатно</span>
+          <h4>Собираю макет</h4>
+          <p>Показываю структуру будущего сайта ещё до договора.</p>
+        </div>
+        <div class="process-card">
+          <span class="eyebrow">Объём</span>
+          <h4>Оцениваю работу</h4>
+          <p>Уже вижу страницы, функции, интеграции и сложность.</p>
+        </div>
+        <div class="process-card">
+          <span class="eyebrow">Договор</span>
+          <h4>Называю точную цену</h4>
+          <p>Одна сумма фиксируется и не меняется в процессе.</p>
+        </div>
+      </div>
+
+      <div class="price-block" style="margin-top:40px; padding-top:32px; border-top:1px solid rgba(0,0,0,0.1);">
+        <div>
+          <span class="eyebrow">Итог</span>
+          <h2 style="margin-top:6px;">Одна сумма.<br>Без сюрпризов.</h2>
+          <p>Каждый проект индивидуален: отличаются страницы, функции, интеграции и сроки. Поэтому сначала разбираюсь в задаче и только потом называю обоснованную стоимость.</p>
+        </div>
+        <div class="price-list">
+          <div class="price-item"><strong>Макет</strong>0 ₽ до договора</div>
+          <div class="price-item"><strong>Смета</strong>Фикс. после согласования</div>
+          <a href="#contact" class="pill" style="text-align:center; margin-top:8px;">Обсудить проект →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq-section">
+  <div class="wrap">
+    <div class="faq-head">
+      <span class="eyebrow">Вопросы</span>
+      <h2>Что спрашивают до старта.</h2>
+      <p>О цене, сроках и работе после запуска — спокойно и без мелкого шрифта.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Сколько стоит разработка сайта?<span class="faq-toggle">+</span></summary>
+        <p>Называть точную цену до знакомства с задачей — значит гадать. На стоимость влияют объём, функциональность и сложность проекта. Сначала я разбираюсь в задаче, затем называю и фиксирую точную сумму. За рамки согласованного бюджета мы не выходим. Если в процессе появляются новые работы, которых не было в первоначальной задаче, сначала отдельно обсуждаем их стоимость — и только потом решаем, добавлять их или нет.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Сколько времени занимает разработка?<span class="faq-toggle">+</span></summary>
+        <p>Всё зависит от объёма, функциональности и скорости согласований. Небольшую одностраничную задачу иногда можно выполнить за один рабочий день, а сложному проекту может потребоваться до двух месяцев. В среднем сайт под ключ занимает до трёх недель. Точный срок я называю и фиксирую после того, как изучу задачу.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Можно доработать сайт после другого специалиста?<span class="faq-toggle">+</span></summary>
+        <p>Да, я берусь за доработку чужих проектов. Для начала бесплатно знакомлюсь с сайтом: смотрю, как он собран, что уже работает и что именно нужно изменить. После этого честно говорю, смогу ли помочь, каким способом и сколько это будет стоить. Иногда разумнее доработать существующее решение, иногда — пересобрать отдельную часть.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Как проходит оплата?<span class="faq-toggle">+</span></summary>
+        <p>Никакой обязательной 100% предоплаты. Работу и оплату делим на понятные этапы, удобные обеим сторонам: вы видите промежуточный результат, согласовываете его и оплачиваете соответствующую часть. Порядок, суммы и результат каждого этапа фиксируем заранее.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Бесплатный прототип — где подвох?<span class="faq-toggle">+</span></summary>
+        <p>Подвоха нет — это выгодно нам обоим. Вы ещё до договора видите схему будущей страницы: её структуру, последовательность блоков и логику. А я изучаю рынок и конкурентов, глубже погружаюсь в задачу и проверяю решение до начала разработки. В итоге вы понимаете, что получите, а я — что именно предстоит сделать.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Что будет после запуска — вы не пропадёте?<span class="faq-toggle">+</span></summary>
+        <p>Это моё основное направление работы. После запуска остаюсь на связи, помогаю с вопросами, правками и дальнейшим развитием проекта. Сайт и все доступы принадлежат вам, но один на один с технической проблемой я заказчиков не оставляю.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="block block-navy contact-block">
+      <h2>Расскажите о вашей задаче</h2>
+      <p>Пришлите ссылку на текущий сайт — отвечу с честной оценкой в течение дня.</p>
+      <a href="mailto:iam@nikitapiskunov.ru" class="pill white" style="font-weight:700;">iam@nikitapiskunov.ru</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>webdesign.piskunov</span>
+    <span>Работаю по всему миру</span>
+  </div>
+</footer>
+
+</body>
+</html>
