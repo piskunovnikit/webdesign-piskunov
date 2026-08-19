@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Превью вариантов карточек — тест</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --ink:#000; --paper:#fff; --off:#f7f7f5; --hair:#e6e6e6; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--off); color:var(--ink); font-family:'Sora',sans-serif; padding:40px 24px; line-height:1.45;}
+  .wrap{max-width:1000px; margin:0 auto;}
+  h1{font-size:26px; font-weight:600; margin-bottom:8px;}
+  .note{opacity:0.65; font-size:15px; margin-bottom:40px; max-width:600px;}
+  .option{margin-bottom:56px;}
+  .option h2{font-family:'Space Mono',monospace; font-size:13px; text-transform:uppercase; letter-spacing:0.06em; opacity:0.55; margin-bottom:14px;}
+  .option p.desc{font-size:15px; opacity:0.75; max-width:560px; margin-bottom:20px;}
+
+  .case-item{border:1px solid var(--hair); border-radius:24px; padding:40px; display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:center; background:#fff; max-width:760px;}
+  .case-item .eyebrow{font-family:'Space Mono',monospace; text-transform:uppercase; letter-spacing:0.06em; font-size:13px; opacity:0.5; margin-bottom:12px; display:block;}
+  .case-item h3{font-size:26px; font-weight:540; margin-bottom:12px;}
+  .case-item p{font-size:16px; font-weight:330; opacity:0.8;}
+
+  .swatch-2{height:180px; border-radius:16px; overflow:hidden; border:1px solid var(--hair); display:flex; flex-direction:column;}
+  .browser-bar{display:flex; align-items:center; gap:6px; padding:8px 12px; background:var(--off); border-bottom:1px solid var(--hair); flex-shrink:0;}
+  .browser-dot{width:7px; height:7px; border-radius:50%; background:var(--hair);}
+  .browser-url{flex:1; text-align:center; font-family:'Space Mono',monospace; font-size:10px; opacity:0.55;}
+  .swatch-2 .thumb{flex:1; overflow:hidden; position:relative;}
+  .swatch-2 .thumb img{width:100%; position:absolute; top:0; left:0;}
+
+  .swatch-3{height:180px; border-radius:16px; overflow:hidden; position:relative; background:#0a0a12; border:1px solid var(--hair);}
+  .swatch-3 .frame-wrap{width:400%; height:400%; transform:scale(0.25); transform-origin:top left; pointer-events:none;}
+  .swatch-3 iframe{width:100%; height:100%; border:none;}
+  .swatch-3 .label{position:absolute; right:12px; bottom:10px; background:rgba(0,0,0,0.6); color:#fff; font-size:11px; padding:4px 10px; border-radius:20px; font-family:'Space Mono',monospace;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Тест: варианты 2 и 3 вживую</h1>
+  <p class="note">Временная страница для проверки, не привязана к навигации сайта. Скриншот — настоящий кадр макета Ivanhoe.</p>
+
+  <div class="option">
+    <h2>Вариант 2 — мини-браузер со скриншотом</h2>
+    <p class="desc">Статичная картинка в рамке с точками и адресной строкой. Не скроллится и не интерактивна — просто обрамление, чтобы было видно, что это веб-страница.</p>
+    <div class="case-item">
+      <div>
+        <span class="eyebrow">WHALE WATCHING · ХЕРМАУС</span>
+        <h3>Оператор наблюдения за китами</h3>
+        <p>Оригинал — тяжёлые несжатые фото, видео-фон на JS-слайдере. Собрал booking-макет с акцентом на скорость.</p>
+      </div>
+      <div class="swatch-2">
+        <div class="browser-bar">
+          <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
+          <span class="browser-url">ivanhoe-demo/concept-c.html</span>
+        </div>
+        <div class="thumb">
+          <img src="cases/img/ivanhoe-mockup.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option">
+    <h2>Вариант 3 — живой iframe в миниатюре</h2>
+    <p class="desc">Настоящая, живая страница макета, встроенная как iframe и уменьшенная через CSS-масштаб. Полностью статична для взгляда — прокрутка/клики внутри миниатюры не работают (слишком маленький масштаб для реального взаимодействия), но это настоящая живая страница, а не картинка: если вы обновите макет на GitHub, превью на главной обновится само, без пересъёмки скриншота.</p>
+    <div class="case-item">
+      <div>
+        <span class="eyebrow">WHALE WATCHING · ХЕРМАУС</span>
+        <h3>Оператор наблюдения за китами</h3>
+        <p>Оригинал — тяжёлые несжатые фото, видео-фон на JS-слайдере. Собрал booking-макет с акцентом на скорость.</p>
+      </div>
+      <div class="swatch-3">
+        <div class="frame-wrap">
+          <iframe src="https://piskunovnikit.github.io/ivanhoe-demo/concept-c.html" loading="lazy"></iframe>
+        </div>
+        <span class="label">live</span>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
