@@ -67,7 +67,10 @@
   .case-item .eyebrow{opacity:0.5; margin-bottom:12px; display:block;}
   .case-item h3{font-size:26px; font-weight:540; margin-bottom:12px;}
   .case-item p{font-size:16px; font-weight:330; opacity:0.8;}
-  .case-swatch{height:180px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-family:'Space Mono',monospace; font-size:13px; text-align:center; padding:20px;}
+  .case-swatch{height:180px; border-radius:16px; position:relative; overflow:hidden; background:#0a0a12;}
+  .case-swatch .frame-wrap{width:400%; height:400%; transform:scale(0.25); transform-origin:top left; pointer-events:none;}
+  .case-swatch iframe{width:100%; height:100%; border:none;}
+  .case-swatch .case-swatch-label{position:absolute; left:0; right:0; bottom:0; padding:14px 20px; background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%); color:#fff;}
   @media (max-width:760px){ .case-item{grid-template-columns:1fr;} }
 
   /* comparison table */
@@ -251,7 +254,10 @@
           <h3>Whale watching tour operator</h3>
           <p>The original had heavy uncompressed photos and a JS-slider video background — the mobile version barely loaded. I built two alternative mockups focused on fast mobile loading and a clear path to booking.</p>
         </div>
-        <div class="case-swatch block-navy">View case →</div>
+        <div class="case-swatch">
+          <div class="frame-wrap"><iframe src="https://piskunovnikit.github.io/ivanhoe-demo/concept-c.html" loading="lazy"></iframe></div>
+          <span class="case-swatch-label">View case →</span>
+        </div>
       </a>
       <a class="case-item" href="cases/scuba.html">
         <div>
@@ -259,7 +265,10 @@
           <h3>Dive school &amp; gear shop</h3>
           <p>The site hadn't visually changed in years — outdated fonts, a random photo grid. I built three alternative styles, complete with a map, live Google reviews, and modern typography.</p>
         </div>
-        <div class="case-swatch block-coral">View case →</div>
+        <div class="case-swatch">
+          <div class="frame-wrap"><iframe src="https://piskunovnikit.github.io/scuba-magic-site/cinema/" loading="lazy"></iframe></div>
+          <span class="case-swatch-label">View case →</span>
+        </div>
       </a>
     </div>
   </div>
