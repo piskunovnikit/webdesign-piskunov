@@ -426,6 +426,29 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
   }, {threshold:0.15});
   document.querySelectorAll(".reveal-init").forEach(el => io.observe(el));
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll(".faq-item").forEach(item => {
+    const summary = item.querySelector("summary");
+    const answer = item.querySelector("p");
+    summary.addEventListener("click", e => {
+      e.preventDefault();
+      if (reduceMotion) { item.open = !item.open; return; }
+      if (item.open) {
+        const anim = answer.animate(
+          [{opacity:1, transform:"translateY(0)"}, {opacity:0, transform:"translateY(-6px)"}],
+          {duration:160, easing:"ease"}
+        );
+        anim.onfinish = () => { item.open = false; };
+      } else {
+        item.open = true;
+        answer.animate(
+          [{opacity:0, transform:"translateY(-6px)"}, {opacity:1, transform:"translateY(0)"}],
+          {duration:260, easing:"cubic-bezier(0.16,1,0.3,1)"}
+        );
+      }
+    });
+  });
 </script>
 
 </body>
