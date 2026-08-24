@@ -32,11 +32,11 @@
   .logo{font-weight:700; font-size:18px; white-space:nowrap;}
   nav{display:flex; align-items:center; gap:26px;}
   nav a{font-size:15px; text-decoration:none;}
-  .pill{background:var(--ink); color:var(--paper); padding:13px 22px; border-radius:50px; text-decoration:none; font-weight:500; font-size:15px; display:inline-block; transition:transform 0.15s ease, opacity 0.15s ease, background-color 0.15s ease;}
-  .pill:hover, .pill:active{background:#333;}
-  .pill.white:hover{background:var(--off); opacity:1; border-color:var(--ink);}
-  .pill:active{transform:scale(0.97);}
-  .pill.white:active{background:var(--hair);}
+  .pill{background:var(--ink); color:var(--paper); padding:13px 22px; border-radius:50px; text-decoration:none; font-weight:500; font-size:15px; display:inline-block; transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1), background-color 0.2s ease, border-color 0.2s ease;}
+  .pill:hover{background:#333; transform:scale(1.04);}
+  .pill.white:hover{background:var(--off); border-color:var(--ink); transform:scale(1.04);}
+  .pill:active{background:#333; transform:scale(0.94);}
+  .pill.white:active{background:var(--hair); transform:scale(0.94);}
   .pill.white{background:var(--paper); color:var(--ink); border:1px solid var(--hair);}
 
   /* hero */
@@ -118,8 +118,8 @@
   .faq-item{border:1px solid var(--hair); border-radius:16px; padding:22px 28px;}
   .faq-item summary{cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:20px; font-size:18px; font-weight:540;}
   .faq-item summary::-webkit-details-marker{display:none;}
-  .faq-toggle{font-family:'Space Mono',monospace; font-size:20px; flex-shrink:0; transition:transform 0.2s ease;}
-  .faq-item[open] .faq-toggle{transform:rotate(45deg);}
+  .faq-toggle{font-family:'Space Mono',monospace; font-size:20px; flex-shrink:0; transition:transform 0.5s cubic-bezier(0.34,1.56,0.64,1);}
+  .faq-item[open] .faq-toggle{transform:rotate(45deg) scale(1.15);}
   .faq-item p{margin-top:16px; font-size:16px; font-weight:330; opacity:0.8; line-height:1.6;}
 
   /* contact */
@@ -142,6 +142,9 @@
     h2[style*="white-space:nowrap"], .block h2{white-space:normal !important;}
   }
   a:focus-visible, summary:focus-visible, button:focus-visible{outline:2px solid var(--ink); outline-offset:3px;}
+  .reveal-init{opacity:0; transform:translateY(28px); transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);}
+  .reveal-init.in{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion:reduce){ .reveal-init{opacity:1; transform:none; transition:none;} }
 </style>
 </head>
 <body>
@@ -416,6 +419,14 @@
     <span>Working worldwide</span>
   </div>
 </footer>
+
+<script>
+  document.querySelectorAll(".block").forEach(el => el.classList.add("reveal-init"));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  document.querySelectorAll(".reveal-init").forEach(el => io.observe(el));
+</script>
 
 </body>
 </html>
