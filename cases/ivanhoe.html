@@ -50,6 +50,9 @@
   .before-shot{margin-top:24px; border-radius:12px; overflow:hidden; border:1px solid rgba(0,0,0,0.15);}
   .before-shot img{display:block; width:100%; height:auto;}
   .before-shot .before-label{display:block; font-family:'Space Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; padding:8px 14px; background:rgba(0,0,0,0.08);}
+  .ps-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .ps-grid .block{margin:0;}
+  @media (max-width:820px){ .ps-grid{grid-template-columns:1fr;} }
 
   .live-section{padding:0 0 48px;}
   .live-head{margin-bottom:24px;}
@@ -131,30 +134,27 @@
 
 <section id="problem">
   <div class="wrap">
-    <div class="block block-coral">
-      <span class="eyebrow">Проблема</span>
-      <h2>Оригинал буквально не открывался с телефона</h2>
-      <p>Несжатые фотографии в полный вес, видео на JS-слайдере в фоне главного экрана, задвоенное меню. PageSpeed показывал 35 баллов из 100 на мобильной версии — сайт периодически не отвечал вовсе.</p>
-      <div class="before-shot">
-        <span class="before-label">Было — whaleviewing.co.za</span>
-        <img src="img/ivanhoe-before.jpg" alt="Оригинальный сайт Ivanhoe Sea Safaris до редизайна" loading="lazy">
+    <div class="ps-grid">
+      <div class="block block-coral">
+        <span class="eyebrow">Проблема</span>
+        <h2>Оригинал буквально не открывался с телефона</h2>
+        <p>Несжатые фотографии в полный вес, видео на JS-слайдере в фоне главного экрана, задвоенное меню. PageSpeed показывал 35 баллов из 100 на мобильной версии — сайт периодически не отвечал вовсе.</p>
+        <div class="before-shot">
+          <span class="before-label">Было — whaleviewing.co.za</span>
+          <img src="img/ivanhoe-before.jpg" alt="Оригинальный сайт Ivanhoe Sea Safaris до редизайна" loading="lazy">
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="solution">
-  <div class="wrap">
-    <div class="block block-lilac">
-      <span class="eyebrow">Решение</span>
-      <h2>Booking-макет по образцу Apple + Airbnb + GetYourGuide</h2>
-      <p>Собрал интерфейс вокруг одного сценария — от первого экрана до брони:</p>
-      <ul>
-        <li>Переключатель валют ZAR / USD / EUR</li>
-        <li>Липкая панель с ценой внизу экрана на всех этапах скролла</li>
-        <li>FAQ с честными формулировками — без выдуманных цифр про «100% встречу с китом»</li>
-        <li>Весь текст — дословные цитаты с оригинального сайта клиента, ни одного придуманного факта</li>
-      </ul>
+      <div class="block block-lilac" id="solution">
+        <span class="eyebrow">Решение</span>
+        <h2>Booking-макет по образцу Apple + Airbnb + GetYourGuide</h2>
+        <p>Собрал интерфейс вокруг одного сценария — от первого экрана до брони:</p>
+        <ul>
+          <li>Переключатель валют ZAR / USD / EUR</li>
+          <li>Липкая панель с ценой внизу экрана на всех этапах скролла</li>
+          <li>FAQ с честными формулировками — без выдуманных цифр про «100% встречу с китом»</li>
+          <li>Весь текст — дословные цитаты с оригинального сайта клиента, ни одного придуманного факта</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>

@@ -50,6 +50,9 @@
   .before-shot{margin-top:24px; border-radius:12px; overflow:hidden; border:1px solid rgba(0,0,0,0.15);}
   .before-shot img{display:block; width:100%; height:auto;}
   .before-shot .before-label{display:block; font-family:'Space Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; padding:8px 14px; background:rgba(0,0,0,0.08);}
+  .ps-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .ps-grid .block{margin:0;}
+  @media (max-width:820px){ .ps-grid{grid-template-columns:1fr;} }
 
   .live-section{padding:0 0 48px;}
   .live-head{margin-bottom:24px;}
@@ -131,30 +134,27 @@
 
 <section id="problem">
   <div class="wrap">
-    <div class="block block-coral">
-      <span class="eyebrow">Problem</span>
-      <h2>The original site literally wouldn't open on a phone</h2>
-      <p>Full-size, uncompressed photos, a video running on a JS slider in the hero background, a duplicated menu. PageSpeed scored it 35 out of 100 on mobile — the site would sometimes just stop responding.</p>
-      <div class="before-shot">
-        <span class="before-label">Before — whaleviewing.co.za</span>
-        <img src="../../cases/img/ivanhoe-before.jpg" alt="The original Ivanhoe Sea Safaris website before the redesign" loading="lazy">
+    <div class="ps-grid">
+      <div class="block block-coral">
+        <span class="eyebrow">Problem</span>
+        <h2>The original site literally wouldn't open on a phone</h2>
+        <p>Full-size, uncompressed photos, a video running on a JS slider in the hero background, a duplicated menu. PageSpeed scored it 35 out of 100 on mobile — the site would sometimes just stop responding.</p>
+        <div class="before-shot">
+          <span class="before-label">Before — whaleviewing.co.za</span>
+          <img src="../../cases/img/ivanhoe-before.jpg" alt="The original Ivanhoe Sea Safaris website before the redesign" loading="lazy">
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="solution">
-  <div class="wrap">
-    <div class="block block-lilac">
-      <span class="eyebrow">Solution</span>
-      <h2>A booking-focused mockup inspired by Apple + Airbnb + GetYourGuide</h2>
-      <p>Built the interface around a single scenario — from the first screen to booking:</p>
-      <ul>
-        <li>Currency switcher: ZAR / USD / EUR</li>
-        <li>A sticky price bar at the bottom of the screen through every step of scrolling</li>
-        <li>An FAQ with honest wording — no invented "100% whale sighting" numbers</li>
-        <li>Every piece of copy is a verbatim quote from the client's original site — nothing made up</li>
-      </ul>
+      <div class="block block-lilac" id="solution">
+        <span class="eyebrow">Solution</span>
+        <h2>A booking-focused mockup inspired by Apple + Airbnb + GetYourGuide</h2>
+        <p>Built the interface around a single scenario — from the first screen to booking:</p>
+        <ul>
+          <li>Currency switcher: ZAR / USD / EUR</li>
+          <li>A sticky price bar at the bottom of the screen through every step of scrolling</li>
+          <li>An FAQ with honest wording — no invented "100% whale sighting" numbers</li>
+          <li>Every piece of copy is a verbatim quote from the client's original site — nothing made up</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>

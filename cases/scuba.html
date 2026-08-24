@@ -50,6 +50,9 @@
   .before-shot{margin-top:24px; border-radius:12px; overflow:hidden; border:1px solid rgba(0,0,0,0.15);}
   .before-shot img{display:block; width:100%; height:auto;}
   .before-shot .before-label{display:block; font-family:'Space Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; padding:8px 14px; background:rgba(0,0,0,0.08);}
+  .ps-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .ps-grid .block{margin:0;}
+  @media (max-width:820px){ .ps-grid{grid-template-columns:1fr;} }
 
   .live-section{padding:0 0 48px;}
   .live-head{margin-bottom:24px;}
@@ -131,31 +134,28 @@
 
 <section id="problem">
   <div class="wrap">
-    <div class="block block-mint">
-      <span class="eyebrow">Проблема</span>
-      <h2>Сайт не менялся годами, а фото в галерее — превью 150×138px</h2>
-      <p>Старые шрифты, случайная сетка фотографий, качество фото в оригинальной галерее не годилось для полноразмерного макета — только маленькие бледные превью без ссылки на оригинал.</p>
-      <div class="before-shot">
-        <span class="before-label">Было — scubamagic.co.za</span>
-        <img src="img/scuba-before.jpg" alt="Оригинальный сайт Scuba Magic до редизайна" loading="lazy">
+    <div class="ps-grid">
+      <div class="block block-mint">
+        <span class="eyebrow">Проблема</span>
+        <h2>Сайт не менялся годами, а фото в галерее — превью 150×138px</h2>
+        <p>Старые шрифты, случайная сетка фотографий, качество фото в оригинальной галерее не годилось для полноразмерного макета — только маленькие бледные превью без ссылки на оригинал.</p>
+        <div class="before-shot">
+          <span class="before-label">Было — scubamagic.co.za</span>
+          <img src="img/scuba-before.jpg" alt="Оригинальный сайт Scuba Magic до редизайна" loading="lazy">
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="solution">
-  <div class="wrap">
-    <div class="block block-lime">
-      <span class="eyebrow">Решение</span>
-      <h2>Кинематографичный концепт с собственной генерацией фото</h2>
-      <p>Взял за референс паттерн дизайн-системы Ferrari — не бренд, а приёмы:</p>
-      <ul>
-        <li>Острые углы без скруглений, почти-чёрный фон, редкий алый акцент</li>
-        <li>Full-bleed фото-геро на весь экран</li>
-        <li>Курсы поданы как spec-таблица с анимированным счётчиком цены при скролле</li>
-        <li>10 фото сгенерированы через Gemini (Nano Banana) взамен низкокачественных оригиналов</li>
-        <li>Карта и реальный рейтинг Google — 4.5★, 19 отзывов, с настоящей цитатой отзыва</li>
-      </ul>
+      <div class="block block-lime" id="solution">
+        <span class="eyebrow">Решение</span>
+        <h2>Кинематографичный концепт с собственной генерацией фото</h2>
+        <p>Взял за референс паттерн дизайн-системы Ferrari — не бренд, а приёмы:</p>
+        <ul>
+          <li>Острые углы без скруглений, почти-чёрный фон, редкий алый акцент</li>
+          <li>Full-bleed фото-геро на весь экран</li>
+          <li>Курсы поданы как spec-таблица с анимированным счётчиком цены при скролле</li>
+          <li>10 фото сгенерированы через Gemini (Nano Banana) взамен низкокачественных оригиналов</li>
+          <li>Карта и реальный рейтинг Google — 4.5★, 19 отзывов, с настоящей цитатой отзыва</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>

@@ -50,6 +50,9 @@
   .before-shot{margin-top:24px; border-radius:12px; overflow:hidden; border:1px solid rgba(0,0,0,0.15);}
   .before-shot img{display:block; width:100%; height:auto;}
   .before-shot .before-label{display:block; font-family:'Space Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; padding:8px 14px; background:rgba(0,0,0,0.08);}
+  .ps-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .ps-grid .block{margin:0;}
+  @media (max-width:820px){ .ps-grid{grid-template-columns:1fr;} }
 
   .live-section{padding:0 0 48px;}
   .live-head{margin-bottom:24px;}
@@ -131,31 +134,28 @@
 
 <section id="problem">
   <div class="wrap">
-    <div class="block block-mint">
-      <span class="eyebrow">Problem</span>
-      <h2>The site hadn't changed in years, and the gallery photos were 150×138px thumbnails</h2>
-      <p>Dated fonts, a random photo grid, and photo quality in the original gallery that wasn't fit for a full-size mockup — just small, washed-out thumbnails with no link to the original.</p>
-      <div class="before-shot">
-        <span class="before-label">Before — scubamagic.co.za</span>
-        <img src="../../cases/img/scuba-before.jpg" alt="The original Scuba Magic website before the redesign" loading="lazy">
+    <div class="ps-grid">
+      <div class="block block-mint">
+        <span class="eyebrow">Problem</span>
+        <h2>The site hadn't changed in years, and the gallery photos were 150×138px thumbnails</h2>
+        <p>Dated fonts, a random photo grid, and photo quality in the original gallery that wasn't fit for a full-size mockup — just small, washed-out thumbnails with no link to the original.</p>
+        <div class="before-shot">
+          <span class="before-label">Before — scubamagic.co.za</span>
+          <img src="../../cases/img/scuba-before.jpg" alt="The original Scuba Magic website before the redesign" loading="lazy">
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="solution">
-  <div class="wrap">
-    <div class="block block-lime">
-      <span class="eyebrow">Solution</span>
-      <h2>A cinematic concept with custom-generated photography</h2>
-      <p>Used Ferrari's design system as a reference — not the brand, just the techniques:</p>
-      <ul>
-        <li>Sharp, un-rounded corners, near-black background, a rare red accent</li>
-        <li>A full-bleed hero photo across the whole screen</li>
-        <li>Courses presented as a spec table with an animated price counter on scroll</li>
-        <li>10 photos generated via Gemini (Nano Banana) to replace low-quality originals</li>
-        <li>A real Google map and rating — 4.5★, 19 reviews, with a genuine review quote</li>
-      </ul>
+      <div class="block block-lime" id="solution">
+        <span class="eyebrow">Solution</span>
+        <h2>A cinematic concept with custom-generated photography</h2>
+        <p>Used Ferrari's design system as a reference — not the brand, just the techniques:</p>
+        <ul>
+          <li>Sharp, un-rounded corners, near-black background, a rare red accent</li>
+          <li>A full-bleed hero photo across the whole screen</li>
+          <li>Courses presented as a spec table with an animated price counter on scroll</li>
+          <li>10 photos generated via Gemini (Nano Banana) to replace low-quality originals</li>
+          <li>A real Google map and rating — 4.5★, 19 reviews, with a genuine review quote</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
