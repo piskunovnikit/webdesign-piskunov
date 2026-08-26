@@ -502,7 +502,7 @@
           headers: { Accept: "application/json" }
         });
         if (resp.ok) {
-          contactStatus.textContent = "Thanks! Your message is sent, I'll reply within a day.";
+          contactStatus.textContent = "Thanks! Your message has been sent.";
           contactStatus.classList.remove("error");
           contactForm.reset();
         } else {

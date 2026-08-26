@@ -503,7 +503,7 @@
           headers: { Accept: "application/json" }
         });
         if (resp.ok) {
-          contactStatus.textContent = "Спасибо! Заявка отправлена, отвечу в течение дня.";
+          contactStatus.textContent = "Спасибо! Заявка отправлена.";
           contactStatus.classList.remove("error");
           contactForm.reset();
         } else {
