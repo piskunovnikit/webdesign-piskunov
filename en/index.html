@@ -148,9 +148,8 @@
   footer .legal-links{display:flex; gap:16px; flex-wrap:wrap;}
   footer .legal-links a{text-decoration:none;}
   footer .legal-links a:hover{text-decoration:underline;}
-  .back-to-top{position:fixed; right:20px; bottom:20px; width:44px; height:44px; border-radius:50%; background:var(--ink); color:var(--paper); display:flex; align-items:center; justify-content:center; text-decoration:none; opacity:0; pointer-events:none; transition:opacity 0.2s ease; z-index:20;}
-  .back-to-top.show{opacity:1; pointer-events:auto;}
-  @media (prefers-reduced-motion:reduce){ .back-to-top{transition:none;} }
+  .back-to-top{position:fixed; right:20px; bottom:20px; width:44px; height:44px; border-radius:50%; background:var(--ink); color:var(--paper); align-items:center; justify-content:center; text-decoration:none; display:none; z-index:20;}
+  .back-to-top.show{display:flex;}
 
   /* mobile */
   @media (max-width:640px){
