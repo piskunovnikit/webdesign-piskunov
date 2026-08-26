@@ -135,6 +135,9 @@
   .contact-form input:focus, .contact-form textarea:focus{outline:none; border-color:rgba(255,255,255,0.55); background:rgba(255,255,255,0.12);}
   .contact-form button{margin-top:4px; border:none; cursor:pointer; align-self:flex-start;}
   .contact-alt{margin-top:20px !important; font-size:14px;}
+  .contact-form-status{max-width:440px; margin:14px auto 0; text-align:center; font-size:15px; font-weight:500; opacity:0; height:0; overflow:hidden; transition:opacity 0.3s ease;}
+  .contact-form-status.show{opacity:1; height:auto;}
+  .contact-form-status.error{color:#f3c9b6;}
   .contact-alt a{color:#fff; text-decoration:underline; text-underline-offset:3px;}
 
   footer{padding:32px 0; border-top:1px solid var(--hair);}
@@ -435,7 +438,7 @@
     <div class="block block-navy contact-block">
       <h2>Расскажите о вашей задаче</h2>
       <p>Пришлите ссылку на текущий сайт — отвечу с честной оценкой в течение дня.</p>
-      <form class="contact-form" action="https://formspree.io/f/mnpaelrn" method="POST">
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/mnpaelrn" method="POST">
         <input type="hidden" name="_subject" value="Новая заявка с webdesign-piskunov.ru">
         <input type="text" name="_gotcha" style="display:none">
         <input type="text" name="Имя" placeholder="Как к вам обращаться" required>
@@ -443,6 +446,7 @@
         <textarea name="Сообщение" placeholder="Ссылка на сайт и/или пара слов о задаче" rows="4" required></textarea>
         <button type="submit" class="pill white" style="font-weight:700;">Отправить →</button>
       </form>
+      <p class="contact-form-status" id="contact-form-status" role="status" aria-live="polite"></p>
       <p class="contact-alt">Или напрямую: <a href="mailto:iam@nikitapiskunov.ru">iam@nikitapiskunov.ru</a></p>
     </div>
   </div>
@@ -484,6 +488,37 @@
       }
     });
   });
+
+  const contactForm = document.getElementById("contact-form");
+  const contactStatus = document.getElementById("contact-form-status");
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const submitBtn = contactForm.querySelector("button[type=submit]");
+      submitBtn.disabled = true;
+      try {
+        const resp = await fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: { Accept: "application/json" }
+        });
+        if (resp.ok) {
+          contactStatus.textContent = "Спасибо! Заявка отправлена, отвечу в течение дня.";
+          contactStatus.classList.remove("error");
+          contactForm.reset();
+        } else {
+          contactStatus.textContent = "Не отправилось — напишите напрямую на почту ниже.";
+          contactStatus.classList.add("error");
+        }
+      } catch (err) {
+        contactStatus.textContent = "Не отправилось — напишите напрямую на почту ниже.";
+        contactStatus.classList.add("error");
+      }
+      contactStatus.classList.add("show");
+      submitBtn.disabled = false;
+      setTimeout(() => { contactStatus.classList.remove("show"); }, 5000);
+    });
+  }
 </script>
 
 </body>
