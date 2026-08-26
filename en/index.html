@@ -148,7 +148,7 @@
   footer .legal-links{display:flex; gap:16px; flex-wrap:wrap;}
   footer .legal-links a{text-decoration:none;}
   footer .legal-links a:hover{text-decoration:underline;}
-  .back-to-top{position:fixed; right:20px; bottom:20px; width:44px; height:44px; border-radius:50%; background:var(--ink); color:var(--paper); display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:22px; font-weight:800; opacity:0; pointer-events:none; transition:opacity 0.25s ease, transform 0.25s ease; transform:translateY(8px); z-index:20;}
+  .back-to-top{position:fixed; right:20px; bottom:20px; width:44px; height:44px; border-radius:50%; background:var(--ink); color:var(--paper); display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:22px; font-weight:800; opacity:0; pointer-events:none; transition:opacity 0.25s ease, transform 0.25s ease; transform:translateY(8px) translateZ(0); will-change:transform, opacity; z-index:20;}
   .back-to-top.show{opacity:1; pointer-events:auto; transform:translateY(0);}
   @media (prefers-reduced-motion:reduce){ .back-to-top{transition:none;} }
 
@@ -462,7 +462,7 @@
           <input type="email" name="Email" placeholder="Your email" required>
           <input type="text" name="Contact" placeholder="Phone or @telegram">
           <textarea name="Message" placeholder="Link to your site and/or a few words about the project" rows="4" required></textarea>
-          <label class="contact-consent"><input type="checkbox" name="Consent" required> I agree to the <a href="../consent/index.html" target="_blank">processing of personal data</a></label>
+          <label class="contact-consent"><input type="checkbox" name="Consent" required> I agree to the <a href="consent/index.html" target="_blank">processing of personal data</a></label>
           <button type="submit" class="pill white" style="font-weight:700;">Send →</button>
         </form>
         <p class="contact-form-status" id="contact-form-status" role="status" aria-live="polite"></p>
@@ -475,9 +475,9 @@
   <div class="wrap">
     <span>webdesign.piskunov</span>
     <nav class="legal-links">
-      <a href="../privacy/index.html">Privacy Policy</a>
-      <a href="../consent/index.html">Consent</a>
-      <a href="../cookies/index.html">Cookies</a>
+      <a href="privacy/index.html">Privacy Policy</a>
+      <a href="consent/index.html">Consent</a>
+      <a href="cookies/index.html">Cookies</a>
     </nav>
     <span>Working worldwide</span>
   </div>
