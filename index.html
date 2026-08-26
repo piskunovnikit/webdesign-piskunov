@@ -137,7 +137,7 @@
   .contact-form input::placeholder, .contact-form textarea::placeholder{color:rgba(255,255,255,0.45);}
   .contact-form input:focus, .contact-form textarea:focus{outline:none; border-color:rgba(255,255,255,0.55); background:rgba(255,255,255,0.12);}
   .contact-form button{margin-top:4px; border:none; cursor:pointer; align-self:center; width:228px;}
-  .contact-form-status{max-width:480px; margin:42px auto 0; text-align:center; font-size:16px; font-weight:600; opacity:0; height:0; overflow:hidden; transition:opacity 0.3s ease;}
+  .contact-form-status{max-width:480px; margin:70px auto 0; text-align:center; font-size:16px; font-weight:600; opacity:0; height:0; overflow:hidden; transition:opacity 0.3s ease;}
   .contact-form-status.show{opacity:1; height:auto;}
   .contact-form-status.error{color:#f3c9b6;}
 
@@ -498,12 +498,25 @@
 
   const contactToggle = document.getElementById("contact-form-toggle");
   const contactFormWrap = document.getElementById("contact-form-wrap");
+  const contactSection = document.getElementById("contact");
   if (contactToggle && contactFormWrap) {
+    const collapseContactForm = () => {
+      contactFormWrap.hidden = true;
+      contactToggle.parentElement.hidden = false;
+    };
     contactToggle.addEventListener("click", () => {
       contactFormWrap.hidden = false;
       contactToggle.parentElement.hidden = true;
       contactFormWrap.querySelector("input[required]").focus();
     });
+    if (contactSection) {
+      const collapseObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting && !contactFormWrap.hidden) collapseContactForm();
+        });
+      }, {threshold: 0});
+      collapseObserver.observe(contactSection);
+    }
   }
 
   const contactForm = document.getElementById("contact-form");
