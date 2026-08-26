@@ -129,6 +129,13 @@
   .contact-block h2{color:#fff; font-size:clamp(30px,5.5vw,54px); font-weight:340; letter-spacing:-0.02em; max-width:680px; margin:0 auto 20px;}
   .contact-block p{opacity:0.75; max-width:440px; margin:0 auto 32px;}
   .contact-note{font-size:12px; opacity:0.5; margin-top:22px; font-family:'Space Mono',monospace;}
+  .contact-form{display:flex; flex-direction:column; gap:12px; max-width:440px; margin:0 auto; text-align:left;}
+  .contact-form input, .contact-form textarea{background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); border-radius:12px; padding:14px 16px; color:#fff; font-family:'Sora',sans-serif; font-size:15px; resize:vertical; transition:border-color 0.2s ease, background-color 0.2s ease;}
+  .contact-form input::placeholder, .contact-form textarea::placeholder{color:rgba(255,255,255,0.45);}
+  .contact-form input:focus, .contact-form textarea:focus{outline:none; border-color:rgba(255,255,255,0.55); background:rgba(255,255,255,0.12);}
+  .contact-form button{margin-top:4px; border:none; cursor:pointer; align-self:flex-start;}
+  .contact-alt{margin-top:20px !important; font-size:14px;}
+  .contact-alt a{color:#fff; text-decoration:underline; text-underline-offset:3px;}
 
   footer{padding:32px 0; border-top:1px solid var(--hair);}
   footer .wrap{display:flex; justify-content:space-between; font-size:14px; opacity:0.6;}
@@ -415,7 +422,16 @@
     <div class="block block-navy contact-block">
       <h2>Расскажите о вашей задаче</h2>
       <p>Пришлите ссылку на текущий сайт — отвечу с честной оценкой в течение дня.</p>
-      <a href="mailto:iam@nikitapiskunov.ru" class="pill white" style="font-weight:700;">iam@nikitapiskunov.ru</a>
+      <form class="contact-form" action="https://formsubmit.co/iam@nikitapiskunov.ru" method="POST">
+        <input type="hidden" name="_subject" value="Новая заявка с webdesign-piskunov.ru">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_honey" style="display:none">
+        <input type="text" name="Имя" placeholder="Как к вам обращаться" required>
+        <input type="email" name="Email" placeholder="Ваш email" required>
+        <textarea name="Сообщение" placeholder="Ссылка на сайт и пара слов о задаче" rows="4" required></textarea>
+        <button type="submit" class="pill white" style="font-weight:700;">Отправить →</button>
+      </form>
+      <p class="contact-alt">Или напрямую: <a href="mailto:iam@nikitapiskunov.ru">iam@nikitapiskunov.ru</a></p>
     </div>
   </div>
 </section>
