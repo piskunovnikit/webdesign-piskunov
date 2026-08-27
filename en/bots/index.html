@@ -80,6 +80,7 @@
   .faq-section{padding:16px 0 48px;}
   .faq-head{margin-bottom:32px;}
   .faq-head h2{font-size:clamp(28px,4vw,44px); font-weight:340; letter-spacing:-0.02em;}
+  .faq-head p{font-size:18px; font-weight:330; opacity:0.7; margin-top:12px; max-width:540px;}
   .faq-list{display:flex; flex-direction:column; gap:12px; overflow-anchor:none;}
   .faq-item{border:1px solid var(--hair); border-radius:16px; padding:22px 28px;}
   .faq-item summary{cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:20px; font-size:18px; font-weight:540;}
@@ -96,7 +97,7 @@
   .contact-form-wrap{margin-top:28px;}
   .contact-form{display:flex; flex-direction:column; gap:12px; max-width:480px; margin:0 auto; text-align:left;}
   .contact-form input, .contact-form select, .contact-form textarea{background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); border-radius:12px; padding:14px 16px; color:#fff; font-family:'Sora',sans-serif; font-size:15px; resize:vertical; transition:border-color 0.2s ease, background-color 0.2s ease;}
-  .contact-form select{appearance:none; -webkit-appearance:none;}
+  .contact-form select{appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; background-size:16px; padding-right:44px;}
   .contact-form select option{color:#000;}
   .contact-form input::placeholder, .contact-form textarea::placeholder{color:rgba(255,255,255,0.45);}
   .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus{outline:none; border-color:rgba(255,255,255,0.55); background:rgba(255,255,255,0.12);}
@@ -263,7 +264,9 @@
 <section class="faq-section" id="faq">
   <div class="wrap">
     <div class="faq-head">
+      <span class="eyebrow">Questions</span>
       <h2>Bot questions.</h2>
+      <p>Servers, timelines, and support after launch — plainly, no fine print.</p>
     </div>
     <div class="faq-list">
       <details class="faq-item">
