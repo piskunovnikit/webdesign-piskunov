@@ -57,6 +57,23 @@
   .num-item .num{font-family:'Space Mono',monospace; font-size:13px; opacity:0.5; flex-shrink:0; padding-top:3px;}
   .num-item p{font-size:16px; font-weight:400; margin:0;}
 
+  .offer-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; margin-top:24px;}
+  .offer-item{background:var(--paper); border-radius:8px; padding:20px 22px;}
+  .offer-item h4{font-size:17px; font-weight:540; margin-bottom:8px;}
+  .offer-item p{font-size:15px; font-weight:330; opacity:0.85; line-height:1.5;}
+
+  .pricing-section{padding:0 0 48px;}
+  .process-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(196px,1fr)); gap:16px; margin-top:32px;}
+  #pricing .process-grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
+  .process-card{background:var(--paper); border-radius:8px; padding:24px 24px 24px 14px;}
+  .process-card .eyebrow{opacity:0.6; margin-bottom:10px; display:block;}
+  .process-card h4{font-size:20px; font-weight:540; margin-bottom:6px; white-space:nowrap;}
+  .process-card p{font-size:16px; font-weight:330; opacity:0.85;}
+  .price-block{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:32px;}
+  .price-list{display:flex; flex-direction:column; gap:10px;}
+  .price-item{background:var(--paper); border-radius:8px; padding:14px 18px; font-size:16px; font-weight:400;}
+  .price-item strong{display:block; font-family:'Space Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700; margin-bottom:4px;}
+
   .faq-section{padding:16px 0 48px;}
   .faq-head{margin-bottom:32px;}
   .faq-head h2{font-size:clamp(28px,4vw,44px); font-weight:340; letter-spacing:-0.02em;}
@@ -147,19 +164,90 @@
   <div class="wrap">
 
     <div class="block block-mint">
-      <span class="eyebrow">Basic · from 7 days</span>
+      <span class="eyebrow">Basic</span>
       <h2>Bot, built to order</h2>
-      <p class="desc">I'll build a Telegram bot for your specific task: capturing and processing leads, automatic replies, booking, broadcasts, logic built around your process. If needed, a full Python (aiogram 3) backend: its own PostgreSQL database, payment processing, integration with amoCRM, Bitrix24, or Google Sheets, webhook deployment on a server with no perpetually sleeping polling. After handover, you get instructions for running it. If you're not sure what to automate yet, I'll help figure that out.</p>
+      <p class="desc">I'll build a Telegram bot for your specific task. If you're not sure what to automate yet, I'll help figure that out.</p>
+      <div class="offer-grid">
+        <div class="offer-item">
+          <h4>Bot logic</h4>
+          <p>Capturing and processing leads, automatic replies, booking, broadcasts — built around your process.</p>
+        </div>
+        <div class="offer-item">
+          <h4>Python backend, if needed</h4>
+          <p>aiogram 3, its own PostgreSQL database, payment processing (via ЮKassa or similar), integration with amoCRM, Bitrix24, or Google Sheets, webhook deployment with no perpetually sleeping polling.</p>
+        </div>
+        <div class="offer-item">
+          <h4>After handover</h4>
+          <p>Instructions for running the bot.</p>
+        </div>
+      </div>
     </div>
 
     <div class="block block-coral">
-      <span class="eyebrow">With AI · from 10 days</span>
+      <span class="eyebrow">With artificial intelligence</span>
       <h2>Bot with AI (GPT)</h2>
-      <p class="desc">GPT integration for a Telegram bot — instead of template replies, the bot understands the question and answers it properly. I configure it on your business's knowledge base: prompt, context, topic limits. It can advise on your services, answer common questions, and help triage inquiries. Conversations are logged for quality control, with a budget cap on AI requests.</p>
+      <p class="desc">GPT integration for a Telegram bot — instead of template replies, the bot understands the question and answers it properly.</p>
+      <div class="offer-grid">
+        <div class="offer-item">
+          <h4>Understands the question</h4>
+          <p>Answers properly, advises on your services, answers common questions, and helps triage inquiries.</p>
+        </div>
+        <div class="offer-item">
+          <h4>Configured for your business</h4>
+          <p>Prompt, context, and topic limits — built on your company's own knowledge base.</p>
+        </div>
+        <div class="offer-item">
+          <h4>Control</h4>
+          <p>Conversations are logged for quality control, with a budget cap on AI requests.</p>
+        </div>
+      </div>
     </div>
 
-    <p style="max-width:640px; font-size:16px; opacity:0.7; margin-top:8px;">The price follows from the task, not the other way around. Every bot is different: integrations, amount of logic, and timeline vary. I figure out the scope first, then name a fair price.</p>
+  </div>
+</section>
 
+<section id="pricing" class="pricing-section">
+  <div class="wrap">
+    <div class="block block-mint">
+      <span class="eyebrow">PRICE</span>
+      <h2>What it costs.</h2>
+      <p>The price follows from the task, not the other way around. I figure out the scope first, then name a number.</p>
+      <div class="process-grid">
+        <div class="process-card">
+          <span class="eyebrow">Brief</span>
+          <h4>You describe the task</h4>
+          <p>What needs automating and what result you want.</p>
+        </div>
+        <div class="process-card">
+          <span class="eyebrow">Free</span>
+          <h4>I sketch a solution</h4>
+          <p>I show you the bot's logic before any contract.</p>
+        </div>
+        <div class="process-card">
+          <span class="eyebrow">Scope</span>
+          <h4>I estimate the work</h4>
+          <p>By now I can see the integrations, features, and complexity.</p>
+        </div>
+        <div class="process-card">
+          <span class="eyebrow">Contract</span>
+          <h4>I name the exact price</h4>
+          <p>One fixed number, locked in for the whole project.</p>
+        </div>
+      </div>
+
+      <div class="price-block" style="margin-top:40px; padding-top:32px; border-top:1px solid rgba(0,0,0,0.1);">
+        <div>
+          <span class="eyebrow">Bottom line</span>
+          <h2 style="margin-top:6px;">One number.<br>No surprises.</h2>
+          <p>Every bot is different: integrations, amount of logic, and timeline vary. That's why I get into the task first and only then name a fair price.</p>
+        </div>
+        <div class="price-list">
+          <div class="price-item"><strong>Scoping the task</strong>$0 before contract</div>
+          <div class="price-item"><strong>Quote</strong>Fixed, after scoping</div>
+          <a href="#contact" class="pill" style="text-align:center; margin-top:8px;">Discuss a project →</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -183,7 +271,7 @@
       </details>
       <details class="faq-item">
         <summary>How long does it take?<span class="faq-toggle">+</span></summary>
-        <p>From 7 days for a basic bot, from 10 days for one with AI. The exact timeline depends on how many integrations are involved — I'll confirm it after we discuss the task.</p>
+        <p>Depends on the number of integrations and how complex the logic is — I'll confirm the exact timeline after we discuss the task.</p>
       </details>
       <details class="faq-item">
         <summary>How does payment work?<span class="faq-toggle">+</span></summary>

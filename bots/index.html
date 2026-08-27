@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#ffffff">
-<title>Telegram-боты под ключ · webdesign.piskunov</title>
+<title>Telegram-бот под ключ · webdesign.piskunov</title>
 <meta name="description" content="Разработка Telegram-ботов: приём заявок, интеграция с CRM и оплатой, ИИ-ассистент на GPT. От 8 000 ₽.">
-<meta property="og:title" content="Telegram-боты под ключ · webdesign.piskunov">
+<meta property="og:title" content="Telegram-бот под ключ · webdesign.piskunov">
 <meta property="og:description" content="Разработка Telegram-ботов: приём заявок, интеграция с CRM и оплатой, ИИ-ассистент на GPT. От 8 000 ₽.">
 <meta property="og:image" content="https://piskunovnikit.github.io/webdesign-piskunov/cases/img/home-preview.jpg">
 <meta property="og:url" content="https://piskunovnikit.github.io/webdesign-piskunov/bots/">
@@ -57,6 +57,23 @@
   .num-item{display:flex; gap:14px;}
   .num-item .num{font-family:'Space Mono',monospace; font-size:13px; opacity:0.5; flex-shrink:0; padding-top:3px;}
   .num-item p{font-size:16px; font-weight:400; margin:0;}
+
+  .offer-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; margin-top:24px;}
+  .offer-item{background:var(--paper); border-radius:8px; padding:20px 22px;}
+  .offer-item h4{font-size:17px; font-weight:540; margin-bottom:8px;}
+  .offer-item p{font-size:15px; font-weight:330; opacity:0.85; line-height:1.5;}
+
+  .pricing-section{padding:0 0 48px;}
+  .process-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(196px,1fr)); gap:16px; margin-top:32px;}
+  #pricing .process-grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
+  .process-card{background:var(--paper); border-radius:8px; padding:24px 24px 24px 14px;}
+  .process-card .eyebrow{opacity:0.6; margin-bottom:10px; display:block;}
+  .process-card h4{font-size:20px; font-weight:540; margin-bottom:6px; white-space:nowrap;}
+  .process-card p{font-size:16px; font-weight:330; opacity:0.85;}
+  .price-block{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:32px;}
+  .price-list{display:flex; flex-direction:column; gap:10px;}
+  .price-item{background:var(--paper); border-radius:8px; padding:14px 18px; font-size:16px; font-weight:400;}
+  .price-item strong{display:block; font-family:'Space Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700; margin-bottom:4px;}
 
   .faq-section{padding:16px 0 48px;}
   .faq-head{margin-bottom:32px;}
@@ -136,7 +153,7 @@
 <section class="hero">
   <div class="wrap">
     <span class="eyebrow">УСЛУГА · TELEGRAM-БОТЫ</span>
-    <h1>Telegram-боты под ключ.</h1>
+    <h1>Telegram-бот под ключ.</h1>
     <p class="lead">Приём заявок, интеграция с CRM и оплатой, ассистент на GPT — от простого бота до полноценной системы.</p>
     <div class="hero-cta">
       <a href="#contact" class="pill">Оставить заявку →</a>
@@ -148,19 +165,90 @@
   <div class="wrap">
 
     <div class="block block-mint">
-      <span class="eyebrow">Базовый · от 7 дней</span>
+      <span class="eyebrow">Базовый</span>
       <h2>Бот под ключ</h2>
-      <p class="desc">Разработаю Telegram-бота под ваши задачи: приём и обработка заявок, автоответы клиентам, запись на услуги, рассылки. Логика — под ваш процесс. При необходимости — полноценный бэкенд на Python (aiogram 3): своя база данных PostgreSQL, приём оплаты (ЮKassa и аналоги), интеграция с amoCRM, Bitrix24 или Google Таблицами, webhook-развёртывание на сервере без вечно спящего polling. После сдачи — инструкция по управлению. Помогу определить, что именно автоматизировать, если пока не уверены в формулировке ТЗ.</p>
+      <p class="desc">Разработаю Telegram-бота под ваши задачи. Помогу определить, что именно автоматизировать, если пока не уверены в формулировке ТЗ.</p>
+      <div class="offer-grid">
+        <div class="offer-item">
+          <h4>Логика бота</h4>
+          <p>Приём и обработка заявок, автоответы клиентам, запись на услуги, рассылки — под ваш процесс.</p>
+        </div>
+        <div class="offer-item">
+          <h4>Бэкенд на Python, если нужно</h4>
+          <p>aiogram 3, своя база данных PostgreSQL, приём оплаты (ЮKassa и аналоги), интеграция с amoCRM, Bitrix24 или Google Таблицами, webhook-развёртывание без вечно спящего polling.</p>
+        </div>
+        <div class="offer-item">
+          <h4>После сдачи</h4>
+          <p>Инструкция по управлению ботом.</p>
+        </div>
+      </div>
     </div>
 
     <div class="block block-coral">
-      <span class="eyebrow">С ИИ · от 10 дней</span>
+      <span class="eyebrow">С искусственным интеллектом</span>
       <h2>Бот с ИИ (GPT)</h2>
-      <p class="desc">Интеграция GPT в Telegram-бота — вместо ответов по шаблону бот понимает вопрос и отвечает по существу. Настраиваю бота под базу знаний вашего бизнеса: промпт, контекст, ограничения темы. Может консультировать по вашим услугам, отвечать на частые вопросы, помогать с первичным отбором обращений. Диалоги логируются для контроля качества, на запросы к ИИ ставится ограничение бюджета.</p>
+      <p class="desc">Интеграция GPT в Telegram-бота — вместо ответов по шаблону бот понимает вопрос и отвечает по существу.</p>
+      <div class="offer-grid">
+        <div class="offer-item">
+          <h4>Понимает вопрос</h4>
+          <p>Отвечает по существу, консультирует по вашим услугам, отвечает на частые вопросы, помогает с первичным отбором обращений.</p>
+        </div>
+        <div class="offer-item">
+          <h4>Настройка под бизнес</h4>
+          <p>Промпт, контекст и ограничения темы — под базу знаний именно вашей компании.</p>
+        </div>
+        <div class="offer-item">
+          <h4>Контроль</h4>
+          <p>Диалоги логируются для контроля качества, на запросы к ИИ ставится ограничение бюджета.</p>
+        </div>
+      </div>
     </div>
 
-    <p style="max-width:640px; font-size:16px; opacity:0.7; margin-top:8px;">Цена — следствие задачи, а не наоборот. Каждый бот индивидуален: отличаются интеграции, объём логики и сроки. Сначала разбираюсь в задаче, потом называю обоснованную стоимость.</p>
+  </div>
+</section>
 
+<section id="pricing" class="pricing-section">
+  <div class="wrap">
+    <div class="block block-mint">
+      <span class="eyebrow">ЦЕНА</span>
+      <h2>Сколько это стоит.</h2>
+      <p>Цена — следствие задачи, а не наоборот. Сначала разбираюсь, потом называю сумму.</p>
+      <div class="process-grid">
+        <div class="process-card">
+          <span class="eyebrow">Вводные</span>
+          <h4>Рассказываете задачу</h4>
+          <p>Что нужно автоматизировать и какой результат хотите получить.</p>
+        </div>
+        <div class="process-card">
+          <span class="eyebrow">Бесплатно</span>
+          <h4>Собираю решение</h4>
+          <p>Показываю логику будущего бота ещё до договора.</p>
+        </div>
+        <div class="process-card">
+          <span class="eyebrow">Объём</span>
+          <h4>Оцениваю работу</h4>
+          <p>Уже вижу интеграции, функции и сложность.</p>
+        </div>
+        <div class="process-card">
+          <span class="eyebrow">Договор</span>
+          <h4>Называю точную цену</h4>
+          <p>Одна сумма фиксируется и не меняется в процессе.</p>
+        </div>
+      </div>
+
+      <div class="price-block" style="margin-top:40px; padding-top:32px; border-top:1px solid rgba(0,0,0,0.1);">
+        <div>
+          <span class="eyebrow">Итог</span>
+          <h2 style="margin-top:6px;">Одна сумма.<br>Без сюрпризов.</h2>
+          <p>Каждый бот индивидуален: отличаются интеграции, объём логики и сроки. Поэтому сначала разбираюсь в задаче и только потом называю обоснованную стоимость.</p>
+        </div>
+        <div class="price-list">
+          <div class="price-item"><strong>Разбор задачи</strong>0 ₽ до договора</div>
+          <div class="price-item"><strong>Смета</strong>Фикс. после согласования</div>
+          <a href="#contact" class="pill" style="text-align:center; margin-top:8px;">Обсудить проект →</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -184,7 +272,7 @@
       </details>
       <details class="faq-item">
         <summary>Сколько времени занимает разработка?<span class="faq-toggle">+</span></summary>
-        <p>От 7 дней для базового бота, от 10 дней — для бота с ИИ. Точный срок зависит от количества интеграций, назову его после обсуждения задачи.</p>
+        <p>Зависит от количества интеграций и сложности логики — назову точный срок после обсуждения задачи.</p>
       </details>
       <details class="faq-item">
         <summary>Как проходит оплата?<span class="faq-toggle">+</span></summary>
