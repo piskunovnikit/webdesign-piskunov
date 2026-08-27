@@ -60,6 +60,11 @@
   .num-item .num{font-family:'Space Mono',monospace; font-size:13px; opacity:0.5; flex-shrink:0; padding-top:3px;}
   .num-item p{font-size:16px; font-weight:400; margin:0;}
 
+  .check-list{display:flex; flex-direction:column; gap:10px;}
+  .check-item{display:flex; align-items:flex-start; gap:10px;}
+  .check-item svg{flex-shrink:0; margin-top:3px;}
+  .check-item p{margin:0;}
+
   .offer-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; margin-top:24px;}
   .offer-item{background:var(--paper); border-radius:8px; padding:24px 24px 24px 14px;}
   .offer-item .eyebrow{margin-bottom:10px;}
@@ -176,7 +181,14 @@
         <div class="offer-item">
           <span class="eyebrow">Форматы</span>
           <h4>Любые сценарии</h4>
-          <p>Магазин в Telegram с каталогом, корзиной и оплатой<br>Приём заявок, анкеты, квалификация лидов<br>Запись и бронирование с напоминаниями<br>Боты для каналов и групп — модерация, приветствия, автопостинг<br>Рассылки клиентам и менеджерам<br>Внутренние боты для команды</p>
+          <div class="check-list">
+            <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><p>Магазин в Telegram с каталогом, корзиной и оплатой</p></div>
+            <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><p>Приём заявок, анкеты, квалификация лидов</p></div>
+            <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><p>Запись и бронирование с напоминаниями</p></div>
+            <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><p>Боты для каналов и групп — модерация, приветствия, автопостинг</p></div>
+            <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><p>Рассылки клиентам и менеджерам</p></div>
+            <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><p>Внутренние боты для команды</p></div>
+          </div>
         </div>
         <div class="offer-item">
           <span class="eyebrow">Инфраструктура</span>

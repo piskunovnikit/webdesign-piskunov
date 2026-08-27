@@ -59,6 +59,11 @@
   .num-item .num{font-family:'Space Mono',monospace; font-size:13px; opacity:0.5; flex-shrink:0; padding-top:3px;}
   .num-item p{font-size:16px; font-weight:400; margin:0;}
 
+  .check-list{display:flex; flex-direction:column; gap:10px;}
+  .check-item{display:flex; align-items:flex-start; gap:10px;}
+  .check-item svg{flex-shrink:0; margin-top:3px;}
+  .check-item p{margin:0;}
+
   .offer-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; margin-top:24px;}
   .offer-item{background:var(--paper); border-radius:8px; padding:24px 24px 24px 14px;}
   .offer-item .eyebrow{margin-bottom:10px;}
@@ -175,7 +180,14 @@
         <div class="offer-item">
           <span class="eyebrow">Formats</span>
           <h4>Any scenario</h4>
-          <p>A Telegram shop with a catalog, cart, and checkout<br>Lead capture, forms, and lead qualification<br>Booking with reminders<br>Bots for channels and groups — moderation, greetings, auto-posting<br>Notifications for clients and managers<br>Internal bots for your team</p>
+          <div class="check-list">
+            <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><p>A Telegram shop with a catalog, cart, and checkout</p></div>
+            <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><p>Lead capture, forms, and lead qualification</p></div>
+            <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><p>Booking with reminders</p></div>
+            <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><p>Bots for channels and groups — moderation, greetings, auto-posting</p></div>
+            <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><p>Notifications for clients and managers</p></div>
+            <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><p>Internal bots for your team</p></div>
+          </div>
         </div>
         <div class="offer-item">
           <span class="eyebrow">Infrastructure</span>
