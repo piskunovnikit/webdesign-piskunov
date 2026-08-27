@@ -46,10 +46,12 @@
 
   .block{border-radius:24px; padding:48px; margin:0 0 32px;}
   .block-mint{background:var(--mint);}
+  .block-lime{background:var(--lime);}
   .block-lilac{background:var(--lilac);}
   .block-coral{background:var(--coral);}
   .block .eyebrow{opacity:0.6; margin-bottom:14px; display:block;}
   .block h2{font-size:clamp(24px,3.2vw,34px); font-weight:540; letter-spacing:-0.02em; max-width:640px;}
+  .block p{font-size:18px; font-weight:330; max-width:560px; margin-top:16px;}
   .block p.desc{font-size:17px; font-weight:330; max-width:640px; margin-top:14px; opacity:0.9;}
 
   .num-list{display:flex; flex-direction:column; gap:16px; margin-top:24px; max-width:640px;}
@@ -169,16 +171,19 @@
       <p class="desc">I'll build a Telegram bot for your specific task. If you're not sure what to automate yet, I'll help figure that out.</p>
       <div class="offer-grid">
         <div class="offer-item">
+          <span class="eyebrow">Leads</span>
           <h4>Bot logic</h4>
           <p>Capturing and processing leads, automatic replies, booking, broadcasts — built around your process.</p>
         </div>
         <div class="offer-item">
-          <h4>Python backend, if needed</h4>
+          <span class="eyebrow">Optional</span>
+          <h4>Python backend</h4>
           <p>aiogram 3, its own PostgreSQL database, payment processing (via ЮKassa or similar), integration with amoCRM, Bitrix24, or Google Sheets, webhook deployment with no perpetually sleeping polling.</p>
         </div>
         <div class="offer-item">
-          <h4>After handover</h4>
-          <p>Instructions for running the bot.</p>
+          <span class="eyebrow">After handover</span>
+          <h4>Instructions</h4>
+          <p>How to run the bot going forward — no need to come back to me for every change.</p>
         </div>
       </div>
     </div>
@@ -189,15 +194,18 @@
       <p class="desc">GPT integration for a Telegram bot — instead of template replies, the bot understands the question and answers it properly.</p>
       <div class="offer-grid">
         <div class="offer-item">
+          <span class="eyebrow">Conversation</span>
           <h4>Understands the question</h4>
           <p>Answers properly, advises on your services, answers common questions, and helps triage inquiries.</p>
         </div>
         <div class="offer-item">
-          <h4>Configured for your business</h4>
+          <span class="eyebrow">Setup</span>
+          <h4>For your business</h4>
           <p>Prompt, context, and topic limits — built on your company's own knowledge base.</p>
         </div>
         <div class="offer-item">
-          <h4>Control</h4>
+          <span class="eyebrow">Control</span>
+          <h4>Logs and budget</h4>
           <p>Conversations are logged for quality control, with a budget cap on AI requests.</p>
         </div>
       </div>
@@ -208,7 +216,7 @@
 
 <section id="pricing" class="pricing-section">
   <div class="wrap">
-    <div class="block block-mint">
+    <div class="block block-lime">
       <span class="eyebrow">PRICE</span>
       <h2>What it costs.</h2>
       <p>The price follows from the task, not the other way around. I figure out the scope first, then name a number.</p>

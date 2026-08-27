@@ -46,10 +46,12 @@
 
   .block{border-radius:24px; padding:48px; margin:0 0 32px;}
   .block-mint{background:var(--mint);}
+  .block-lime{background:var(--lime);}
   .block-lilac{background:var(--lilac);}
   .block-coral{background:var(--coral);}
   .block .eyebrow{opacity:0.6; margin-bottom:14px; display:block;}
   .block h2{font-size:clamp(24px,3.2vw,34px); font-weight:540; letter-spacing:-0.02em; max-width:640px;}
+  .block p{font-size:18px; font-weight:330; max-width:560px; margin-top:16px;}
   .block p.desc{font-size:17px; font-weight:330; max-width:640px; margin-top:14px; opacity:0.9;}
   .block .price-line{font-family:'Space Mono',monospace; font-size:14px; margin-top:18px; opacity:0.7;}
 
@@ -170,16 +172,19 @@
       <p class="desc">Разработаю Telegram-бота под ваши задачи. Помогу определить, что именно автоматизировать, если пока не уверены в формулировке ТЗ.</p>
       <div class="offer-grid">
         <div class="offer-item">
+          <span class="eyebrow">Заявки</span>
           <h4>Логика бота</h4>
           <p>Приём и обработка заявок, автоответы клиентам, запись на услуги, рассылки — под ваш процесс.</p>
         </div>
         <div class="offer-item">
-          <h4>Бэкенд на Python, если нужно</h4>
+          <span class="eyebrow">Опционально</span>
+          <h4>Бэкенд на Python</h4>
           <p>aiogram 3, своя база данных PostgreSQL, приём оплаты (ЮKassa и аналоги), интеграция с amoCRM, Bitrix24 или Google Таблицами, webhook-развёртывание без вечно спящего polling.</p>
         </div>
         <div class="offer-item">
-          <h4>После сдачи</h4>
-          <p>Инструкция по управлению ботом.</p>
+          <span class="eyebrow">После сдачи</span>
+          <h4>Инструкция</h4>
+          <p>Как управлять ботом дальше — без обращения ко мне за каждым действием.</p>
         </div>
       </div>
     </div>
@@ -190,15 +195,18 @@
       <p class="desc">Интеграция GPT в Telegram-бота — вместо ответов по шаблону бот понимает вопрос и отвечает по существу.</p>
       <div class="offer-grid">
         <div class="offer-item">
+          <span class="eyebrow">Диалог</span>
           <h4>Понимает вопрос</h4>
           <p>Отвечает по существу, консультирует по вашим услугам, отвечает на частые вопросы, помогает с первичным отбором обращений.</p>
         </div>
         <div class="offer-item">
-          <h4>Настройка под бизнес</h4>
+          <span class="eyebrow">Настройка</span>
+          <h4>Под ваш бизнес</h4>
           <p>Промпт, контекст и ограничения темы — под базу знаний именно вашей компании.</p>
         </div>
         <div class="offer-item">
-          <h4>Контроль</h4>
+          <span class="eyebrow">Контроль</span>
+          <h4>Логи и бюджет</h4>
           <p>Диалоги логируются для контроля качества, на запросы к ИИ ставится ограничение бюджета.</p>
         </div>
       </div>
@@ -209,7 +217,7 @@
 
 <section id="pricing" class="pricing-section">
   <div class="wrap">
-    <div class="block block-mint">
+    <div class="block block-lime">
       <span class="eyebrow">ЦЕНА</span>
       <h2>Сколько это стоит.</h2>
       <p>Цена — следствие задачи, а не наоборот. Сначала разбираюсь, потом называю сумму.</p>
